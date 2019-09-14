@@ -70,6 +70,6 @@ rightButton.addEventListener('click', e => {
 leftButton.addEventListener('click', e => {
   images[currentImg].className = '';
   currentImg = (images.length - 1 + currentImg) % images.length;
-  images[currentImg].className = 'show-img';
+  images[currentImg].className = 'show-img animated slideInLeft';
   console.log(currentImg);
 });
