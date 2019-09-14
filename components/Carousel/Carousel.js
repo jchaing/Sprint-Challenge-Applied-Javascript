@@ -51,5 +51,25 @@ function Carousel() {
 }
 
 const carouselContainer = document.querySelector('.carousel-container');
-// console.log(carouselContainer);
+console.log(carouselContainer);
 carouselContainer.appendChild(Carousel());
+
+const rightButton = document.querySelector('.right-button');
+const leftButton = document.querySelector('.left-button');
+
+const images = document.querySelectorAll('img');
+console.log(images);
+let currentImg = 0;
+rightButton.addEventListener('click', e => {
+  images[currentImg].className = '';
+  currentImg = (currentImg + 1) % images.length;
+  images[currentImg].className = 'show-img animated slideInRight';
+  console.log(currentImg);
+});
+
+leftButton.addEventListener('click', e => {
+  images[currentImg].className = '';
+  currentImg = (images.length - 1 + currentImg) % images.length;
+  images[currentImg].className = 'show-img';
+  console.log(currentImg);
+});
